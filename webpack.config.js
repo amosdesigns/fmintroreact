@@ -9,7 +9,8 @@ module.exports = {
     path: path.join(__dirname, 'public')
   },
   devServer:{
-    publicPath: '/public'
+    publicPath: '/public',
+    historyApiFallback: true
   },
   resolve:{
     extensions: ['.js', '.jsx', '.json']
