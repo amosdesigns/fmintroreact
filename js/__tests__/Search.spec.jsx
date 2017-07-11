@@ -1,26 +1,27 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import preload from '../../data.json'
+import preload from '../../data.json';
 import Search from '../Search';
-import ShowCard from "../ShowCard";
+import ShowCard from '../ShowCard';
 
-test('Search renders correctly', ()=>{
+test('Search renders correctly', () => {
   const component = shallow(<Search />);
   expect(component).toMatchSnapshot();
 });
 
 // test no input add to the search
-test('Search should render correct amount of show', ()=>{
+test('Search should render correct amount of show', () => {
   const component = shallow(<Search />);
   expect(component.find(ShowCard).length).toEqual(preload.shows.length);
 });
 
 // test if one value is inputed as the value.
-test('Search should render correct amount of show based on search term', ()=>{
+test('Search should render correct amount of show based on search term', () => {
   const searchWord = 'black';
   const component = shallow(<Search />);
-  component.find('input').simulate('change', {target:{value: searchWord}});
-  const showCount = preload.shows.filter( show =>`${show.title} ${show.description}`.toUpperCase().indexOf(searchWord.toUpperCase()) >=0
+  component.find('input').simulate('change', { target: { value: searchWord } });
+  const showCount = preload.shows.filter(
+    show => `${show.title} ${show.description}`.toUpperCase().indexOf(searchWord.toUpperCase()) >= 0
   ).length;
 
   expect(component.find(ShowCard).length).toEqual(showCount);
