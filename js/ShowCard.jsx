@@ -22,14 +22,14 @@ const Image = styled.img`
 `;
 
 class ShowCard extends Component {
-  shouldComponentUpdate(){
-    return false
+  shouldComponentUpdate() {
+    return false;
   }
   props: Show;
-  render () {
+  render() {
     return (
-      <Wrapper to={`/details/${this.props.imdbID}`}> <Image alt={`${this.props.title} Show Poster`}
-        src={`/public/img/posters/${this.props.poster}`}/>
+      <Wrapper to={`/details/${this.props.imdbID}`}>
+        {' '}<Image alt={`${this.props.title} Show Poster`} src={`/public/img/posters/${this.props.poster}`} />
         <div>
           <h3>{this.props.title}</h3>
           <h4>({this.props.year})</h4>

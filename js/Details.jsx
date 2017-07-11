@@ -21,10 +21,10 @@ class Details extends Component {
   render() {
     const { title, description, year, poster, trailer } = this.props.show;
     let ratingComponent;
-    if(this.state.apiData.rating){
+    if (this.state.apiData.rating) {
       ratingComponent = <h3>{this.state.apiData.rating}</h3>;
-    }else{
-      ratingComponent = <Spinner/>;
+    } else {
+      ratingComponent = <Spinner />;
     }
 
     return (
