@@ -11,7 +11,13 @@ const Header = (props: { showSearch?: boolean, handleSearchTermChange?: Function
       <input onChange={props.handleSearchTermChange} value={props.searchTerm} type="text" placeholder="Search" />
     );
   } else {
-    utilSpace = <h2><Link to="/search">Back</Link></h2>;
+    utilSpace = (
+      <h2>
+        <Link to="/search">
+          Back
+        </Link>
+      </h2>
+    );
   }
 
   return (
@@ -19,7 +25,7 @@ const Header = (props: { showSearch?: boolean, handleSearchTermChange?: Function
       <h1>
         <Link to="/"> sVideo </Link>
       </h1>
-      { utilSpace }
+      {utilSpace}
     </header>
   );
 };

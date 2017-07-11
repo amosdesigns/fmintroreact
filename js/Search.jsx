@@ -17,12 +17,12 @@ class Search extends Component {
   render() {
     return (
       <div className="search">
-        <Header searchTerm={this.state.searchTerm} showSearch handleSearchTermChange={this.handleSearchTermChange} />
+        <Header searchTerm={this.state.searchTerm} handleSearchTermChange={this.handleSearchTermChange} showSearch />
         <div>
           {this.props.shows
             .filter(
               show =>
-              `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0
+                `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0
             )
             .map(show => <ShowCard key={show.imdbID} {...show} />)}
         </div>
