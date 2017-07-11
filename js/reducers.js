@@ -10,7 +10,6 @@ const setSearchTerm = (state, action) => Object.assign({}, state, { searchTerm: 
 
 const rootReducer = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
-    
     case SET_SEARCH_TERM:
       return SET_SEARCH_TERM(state, action);
     default:
