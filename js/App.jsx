@@ -13,7 +13,6 @@ import preload from '../data.json';
 const FourOhFour = () => <h1>404</h1>;
 
 const App = () => (
-
     <Provider store={store}>
       <div className="app">
         <Switch>
